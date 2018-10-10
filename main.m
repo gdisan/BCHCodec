@@ -1,4 +1,4 @@
-% "BCH Codec" by ACDISa (c)2003.
+% "BCH Codec" by Denis Nikolaev (c)2003.
 first_screen = present(31,20);
 pause;
 while 1
@@ -76,7 +76,6 @@ while 1
    elseif upr==3
       clc;disp(' ');
       disp('" Thank you for using "BCH Codec" "' );
-      disp('                                 @ACDISa');disp(' ')
       break
    end
 end
