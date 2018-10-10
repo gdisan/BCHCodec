@@ -5,27 +5,27 @@ while 1
    upr=menu('Your choice','Data','Decoder','Exit');
    if upr==1
       clc;disp(' ')
-      mx = input(' Введите слово для передачи(в степенях)\n => ');
+      mx = input(' Р’РІРµРґРёС‚Рµ СЃР»РѕРІРѕ РґР»СЏ РїРµСЂРµРґР°С‡Рё(РІ СЃС‚РµРїРµРЅСЏС…)\n => ');
       mx = deg2bit( mx, 20 );
       if mx ~= -1
          ax = coder( mx , 11 );
          ax_disp = bit2deg( ax );
          if ~isempty(ax_disp)
-            disp(sprintf('\n Кодовое слово(в степенях)'))
+            disp(sprintf('\n РљРѕРґРѕРІРѕРµ СЃР»РѕРІРѕ(РІ СЃС‚РµРїРµРЅСЏС…)'))
             disp(ax_disp)
          else
-            disp(sprintf('\n Нулевое кодовое слово\n    []\n'))
+            disp(sprintf('\n РќСѓР»РµРІРѕРµ РєРѕРґРѕРІРѕРµ СЃР»РѕРІРѕ\n    []\n'))
          end
-         ex = input(' Введите позиции ошибок(в степенях)\n => ');
+         ex = input(' Р’РІРµРґРёС‚Рµ РїРѕР·РёС†РёРё РѕС€РёР±РѕРє(РІ СЃС‚РµРїРµРЅСЏС…)\n => ');
          ex = deg2bit( ex, 31 );
          if ex ~= -1
             yx = mod( ax+ex, 2 );
             yx_disp = bit2deg(yx);
             if ~isempty(yx_disp)
-               disp(sprintf('\n Слово на выходе канала(в степенях)'))
+               disp(sprintf('\n РЎР»РѕРІРѕ РЅР° РІС‹С…РѕРґРµ РєР°РЅР°Р»Р°(РІ СЃС‚РµРїРµРЅСЏС…)'))
                disp(yx_disp)
             else
-               disp(sprintf('\n Нулевое слово на выходе канала\n    []\n'))
+               disp(sprintf('\n РќСѓР»РµРІРѕРµ СЃР»РѕРІРѕ РЅР° РІС‹С…РѕРґРµ РєР°РЅР°Р»Р°\n    []\n'))
             end
          else
             disp('>>Attention: Incorrect place(s)')
@@ -39,39 +39,39 @@ while 1
          if f ~= 3
             if f ~= 0
                if f == 2
-                  disp(sprintf(' Произошло 2 ошибки'))
+                  disp(sprintf(' РџСЂРѕРёР·РѕС€Р»Рѕ 2 РѕС€РёР±РєРё'))
                elseif f == 1
-                  disp(sprintf(' Произошло 1 ошибкa'))
+                  disp(sprintf(' РџСЂРѕРёР·РѕС€Р»Рѕ 1 РѕС€РёР±Рєa'))
                end
             else
-               disp(sprintf(' Ошибок не было'))
+               disp(sprintf(' РћС€РёР±РѕРє РЅРµ Р±С‹Р»Рѕ'))
             end
             ax = bit2deg(ax);
             if ~isempty(ax)
-               disp(sprintf('\n Слово на выходе декодера(в степенях)'))
+               disp(sprintf('\n РЎР»РѕРІРѕ РЅР° РІС‹С…РѕРґРµ РґРµРєРѕРґРµСЂР°(РІ СЃС‚РµРїРµРЅСЏС…)'))
                disp(ax)
             else
-               disp(sprintf('\n Нулевое слово на выходе декодера\n    []\n'))
+               disp(sprintf('\n РќСѓР»РµРІРѕРµ СЃР»РѕРІРѕ РЅР° РІС‹С…РѕРґРµ РґРµРєРѕРґРµСЂР°\n    []\n'))
             end
             mx = bit2deg(mx);
             if ~isempty(mx)
-               disp(sprintf(' Передаваемое слово(в степенях)'))
+               disp(sprintf(' РџРµСЂРµРґР°РІР°РµРјРѕРµ СЃР»РѕРІРѕ(РІ СЃС‚РµРїРµРЅСЏС…)'))
                disp(mx)
             else
-               disp(sprintf(' Передаваемое слово нулевое\n    []\n'))
+               disp(sprintf(' РџРµСЂРµРґР°РІР°РµРјРѕРµ СЃР»РѕРІРѕ РЅСѓР»РµРІРѕРµ\n    []\n'))
             end
          else
-            disp(sprintf('Произошло 3 ошибки.Не могу исправить'))
+            disp(sprintf('РџСЂРѕРёР·РѕС€Р»Рѕ 3 РѕС€РёР±РєРё.РќРµ РјРѕРіСѓ РёСЃРїСЂР°РІРёС‚СЊ'))
             yx = bit2deg(yx);
             if ~isempty(yx)
-               disp(sprintf('\n Слово на выходе декодера(в степенях)'))
+               disp(sprintf('\n РЎР»РѕРІРѕ РЅР° РІС‹С…РѕРґРµ РґРµРєРѕРґРµСЂР°(РІ СЃС‚РµРїРµРЅСЏС…)'))
                disp(yx)
             else
-               disp(sprintf('\n Нулевое слово на выходе декодера\n    []\n'))
+               disp(sprintf('\n РќСѓР»РµРІРѕРµ СЃР»РѕРІРѕ РЅР° РІС‹С…РѕРґРµ РґРµРєРѕРґРµСЂР°\n    []\n'))
             end
       end
       else
-         disp(sprintf('Произошло более 3-х ошибок.Не могу декодировать'))
+         disp(sprintf('РџСЂРѕРёР·РѕС€Р»Рѕ Р±РѕР»РµРµ 3-С… РѕС€РёР±РѕРє.РќРµ РјРѕРіСѓ РґРµРєРѕРґРёСЂРѕРІР°С‚СЊ'))
       end
    elseif upr==3
       clc;disp(' ');
